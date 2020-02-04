@@ -12,38 +12,41 @@ export class Chart1Component implements OnInit
 {
   options: any;
   reporte: {tipoProcedimiento:string, sumaPromedio:number, sumaEstablecido:number}[];
+  xAxisData = [];
+  data1 = [];
+  data2 = [];
 
   constructor(private reportService:ReportService) { }
 
   ngOnInit(){
 
-    const xAxisData = [];
-    const data1 = [];
-    const data2 = [];
+    this.xAxisData = [];
+    this.data1 = [];
+    this.data2 = [];
 
-    xAxisData.push("BID LPN");
-    xAxisData.push("BID CD");
-    xAxisData.push("BID SP");
-    xAxisData.push("BID CP");
-    xAxisData.push("BID LPI");
-    xAxisData.push("BM CD");
-    xAxisData.push("BM SP");
+    this.xAxisData.push("BID LPN");
+    this.xAxisData.push("BID CD");
+    this.xAxisData.push("BID SP");
+    this.xAxisData.push("BID CP");
+    this.xAxisData.push("BID LPI");
+    this.xAxisData.push("BM CD");
+    this.xAxisData.push("BM SP");
 
-    data1.push(325);
-    data1.push(125);
-    data1.push(110);
-    data1.push(55);
-    data1.push(148);
-    data1.push(195);
-    data1.push(203);
+    this.data1.push(325);
+    this.data1.push(125);
+    this.data1.push(110);
+    this.data1.push(55);
+    this.data1.push(148);
+    this.data1.push(195);
+    this.data1.push(203);
     
-    data2.push(103);
-    data2.push(95);
-    data2.push(157);
-    data2.push(70);
-    data2.push(135);
-    data2.push(95);
-    data2.push(100);
+    this.data2.push(103);
+    this.data2.push(95);
+    this.data2.push(157);
+    this.data2.push(70);
+    this.data2.push(135);
+    this.data2.push(95);
+    this.data2.push(100);
 
     this.options = {
           color:['#3E92CC', '#F06449'],
@@ -53,7 +56,7 @@ export class Chart1Component implements OnInit
           },
           tooltip: {},
           xAxis: {
-            data: xAxisData,
+            data: this.xAxisData,
             silent: false,
             splitLine: {
               show: false
@@ -64,14 +67,14 @@ export class Chart1Component implements OnInit
           series: [{
             name: 'Suma Promedio',
             type: 'bar',
-            data: data1,
+            data: this.data1,
             animationDelay: function (idx) {
               return idx * 10;
             }
           }, {
             name: 'Suma Establecido',
             type: 'line',
-            data: data2,
+            data: this.data2,
             animationDelay: function (idx) {
               return idx * 10 + 100;
             }
