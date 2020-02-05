@@ -14,7 +14,6 @@ export class AppComponent implements OnInit
   ngOnInit(){ }
 
   onChartChange(event:any){
-    console.log(event.target.value);
     this.vista = event.target.value;
   }
 
@@ -47,9 +46,37 @@ export class AppComponent implements OnInit
         ["BM CD", 295, 195, 95],
         ["BM SP", 303, 203, 100]
       ]
-      doc.autoTable(columns, data, { margin:{ top: 140 }});
+      //doc.autoTable({ html: '#my-table' })
+      doc.autoTable({
+        styles: { halign: 'center' },
+        columns: columns,
+        body: data,
+        margin: { top: 140 },
+      });
     }
+    else if(this.vista === "2")
+    {
+      var columns = ["Tipos de Procedimientos", "Cantidad"]
+      var data = [
+        ["BID LPN", 2],
+        ["BID CD", 8],
+        ["BID SP", 11],
+        ["BID CP", 6],
+        ["BID LPI", 4],
+        ["BM CD", 3],
+        ["BM SP", 1],
+        ["BM SDO", 2],
+        ["Total", 37]
+      ]
 
+      doc.autoTable({
+        styles: { halign: 'center', fontStyle: 'bold' },
+        columns: columns,
+        body: data,
+        margin: { top: 140 },
+      });
+    
+    }
 
     doc.save(chartTitle.textContent.toLowerCase());
   }

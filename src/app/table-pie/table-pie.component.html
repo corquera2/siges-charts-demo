@@ -1,0 +1,24 @@
+<div id="tablePrueba" class="table-responsive-xl">
+    <table class="table">
+        <thead >
+            <tr class="table-warning">
+              <th colspan="7" >Tipos de Compra</th>
+            </tr>
+            <tr class="table-primary">
+              <th colspan="3" >Tipos de Procedimientos</th>
+              <th colspan="3" >Cantidad</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let d1 of reportData">
+                <td colspan="3">{{d1.name}}</td>
+                <td colspan="1">{{d1.value}}</td>
+            </tr>
+            <tr class="table-primary">
+              <td colspan="3">Total: </td>
+              <td colspan="3">{{totalCompras}}</td>
+            </tr>
+          </tbody>
+    </table>
+</div>

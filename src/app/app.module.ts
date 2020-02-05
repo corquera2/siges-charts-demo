@@ -10,6 +10,7 @@ import { Chart2Component } from './chart2/chart2.component';
 import { Chart3Component } from './chart3/chart3.component';
 import { Chart4Component } from './chart4/chart4.component';
 import { TableChartComponent } from './table-chart/table-chart.component';
+import { TablePieComponent } from './table-pie/table-pie.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TableChartComponent } from './table-chart/table-chart.component';
     Chart2Component,
     Chart3Component,
     Chart4Component,
-    TableChartComponent
+    TableChartComponent,
+    TablePieComponent
   ],
   imports: [
     BrowserModule,

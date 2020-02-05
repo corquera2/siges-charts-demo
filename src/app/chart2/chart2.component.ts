@@ -8,11 +8,24 @@ import { Component, OnInit } from '@angular/core';
 export class Chart2Component implements OnInit {
 
   options:any;
+  data:any[]
 
   constructor() { }
 
   ngOnInit() 
   {
+
+    this.data = [
+      {value: 2, name: 'BID LPN'},
+      {value: 8, name: 'BID CD'},
+      {value: 11, name: 'BID SP'},
+      {value: 6, name: 'BID CP'},
+      {value: 4, name: 'BID LPI'},
+      {value: 3, name: 'BM CD'},
+      {value: 1, name: 'BM SP'},
+      {value: 2, name: 'BM SDO'}
+  ];
+
     this.options = {
       tooltip: {
           trigger: 'item',
@@ -31,17 +44,7 @@ export class Chart2Component implements OnInit {
               name: 'Cantidad por Tipo',
               type: 'pie',
               radius: ['50%', '70%'],
-              data: 
-              [
-                  {value: 2, name: 'BID LPN'},
-                  {value: 8, name: 'BID CD'},
-                  {value: 11, name: 'BID SP'},
-                  {value: 6, name: 'BID CP'},
-                  {value: 4, name: 'BID LPI'},
-                  {value: 3, name: 'BM CD'},
-                  {value: 1, name: 'BM SP'},
-                  {value: 2, name: 'BM SDO'}
-              ],
+              data: this.data,
           }
       ]
   };
